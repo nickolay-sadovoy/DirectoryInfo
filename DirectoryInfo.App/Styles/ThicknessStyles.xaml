@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <system:Double x:Key="DefaultSpacingValue">10</system:Double>
+    <system:Double x:Key="DefaultHalfSpacingValue">5</system:Double>
+
+    <Thickness x:Key="AllSidesDefault" Left="{StaticResource DefaultSpacingValue}" Top="{StaticResource DefaultSpacingValue}" Right="{StaticResource DefaultSpacingValue}" Bottom="{StaticResource DefaultSpacingValue}"/>
+    
+    <Thickness x:Key="LeftDefault" Left="{StaticResource DefaultSpacingValue}" Top="0" Right="0" Bottom="0"/>
+    <Thickness x:Key="RightDefault" Left="0" Top="0" Right="{StaticResource DefaultSpacingValue}" Bottom="0"/>
+    <Thickness x:Key="TopDefault" Left="0" Top="{StaticResource DefaultSpacingValue}" Right="0" Bottom="0"/>
+    <Thickness x:Key="BottomDefault" Left="0" Top="0" Right="0" Bottom="{StaticResource DefaultSpacingValue}"/>
+    
+    <Thickness x:Key="LeftRightDefault" Left="{StaticResource DefaultSpacingValue}" Top="0" Right="{StaticResource DefaultSpacingValue}" Bottom="0"/>
+    <Thickness x:Key="TopBottomDefault" Left="0" Top="{StaticResource DefaultSpacingValue}" Right="0" Bottom="{StaticResource DefaultSpacingValue}"/>
+    <Thickness x:Key="TopRightDefault" Left="0" Top="{StaticResource DefaultSpacingValue}" Right="{StaticResource DefaultSpacingValue}" Bottom="0"/>
+    <Thickness x:Key="LeftTopDefault" Left="{StaticResource DefaultSpacingValue}" Top="{StaticResource DefaultSpacingValue}" Right="0" Bottom="0"/>
+
+    <Thickness x:Key="TopRightBottomDefault" Left="0" Top="{StaticResource DefaultSpacingValue}" Right="{StaticResource DefaultSpacingValue}" Bottom="{StaticResource DefaultSpacingValue}"/>
+    
+    <Thickness x:Key="DefaultButtonPadding" Left="{StaticResource DefaultSpacingValue}" Top="{StaticResource DefaultHalfSpacingValue}" Right="{StaticResource DefaultSpacingValue}" Bottom="{StaticResource DefaultHalfSpacingValue}"/>
+    
+    
+</ResourceDictionary>

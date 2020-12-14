@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+        <ResourceDictionary Source="ThicknessStyles.xaml"/>
+
+        <ResourceDictionary Source="BusyControlStyle.xaml"/>
+        <ResourceDictionary Source="ButtonStyles.xaml"/>
+        <ResourceDictionary Source="TextBoxStyles.xaml"/>
+        <ResourceDictionary Source="TextBlockStyles.xaml"/>
+        <ResourceDictionary Source="ScrollStyles.xaml"/>
+        <ResourceDictionary Source="TreeViewStyles.xaml"/>
+
+        <ResourceDictionary Source="DataTemplates.xaml"/>
+        
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

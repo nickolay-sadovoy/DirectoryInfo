@@ -1,0 +1,84 @@
+﻿<Window x:Class="DirectoryInfo.App.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:viewmodels="clr-namespace:DirectoryInfo.ViewModels;assembly=DirectoryInfo.ViewModels"
+        xmlns:converters="clr-namespace:DirectoryInfo.App.Converters"
+        Width="1145"
+        Height="760">
+    
+    <Window.DataContext>
+        <viewmodels:MainViewModel />
+    </Window.DataContext>
+
+    <Window.Resources>
+        <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
+    <Grid Background="{DynamicResource MainBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="{StaticResource AllSidesDefault}">
+
+            <TextBlock Text="Folder path for scan"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <TextBox MinWidth="300"
+                         IsReadOnly="True"
+                         Margin="{StaticResource RightDefault}"
+                         Text="{Binding SelectedFolderPath, Mode=OneWay}"/>
+                <Button Command="{Binding SelectFolderCommand, Mode=OneWay}">
+                    <TextBlock Text="Select Scan Folder"/>
+                </Button>
+            </StackPanel>
+
+            <TextBlock Text="Output file path. XML format output text"
+                       Margin="{StaticResource TopDefault}"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+                <TextBox MinWidth="300"
+                         IsReadOnly="True"
+                         Margin="{StaticResource RightDefault}"
+                         Text="{Binding OutputFilePath, Mode=OneWay}"/>
+                <Button Command="{Binding SelectOutputFileCommand, Mode=OneWay}">
+                    <TextBlock Text="Set Output File"/>
+                </Button>
+            </StackPanel>
+
+            <Button HorizontalAlignment="Stretch"
+                    Margin="{StaticResource TopDefault}"
+                    Content="Get info"
+                    Command="{Binding GetInfoCommand, Mode=OneWay}"/>
+            
+            <Button HorizontalAlignment="Stretch"
+                    Margin="{StaticResource TopDefault}"
+                    Content="Stop process"
+                    Visibility="{Binding IsScanning, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Command="{Binding StopCommand, Mode=OneWay}"/>
+            
+            
+        </StackPanel>
+
+        <TreeView Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Stretch"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                  Margin="{StaticResource AllSidesDefault}"
+                  Background="{DynamicResource MainBackgroundBrush}"
+                  ItemsSource="{Binding FileSystemItems}"/>
+
+    </Grid>
+</Window>
